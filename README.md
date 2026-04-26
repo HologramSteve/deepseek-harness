@@ -101,6 +101,8 @@ agent.add_tool(get_weather)
 
 The AI will call the tools and the wrapper does the rest.
 
+> If you made some cool tools, PLEASE share them!!
+
 ## 5. Prompting
 Get an actual reply out of the model with the `prompt()` function. See all parameters below:
 - `message`: The input for the AI model. (required)
