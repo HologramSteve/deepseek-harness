@@ -17,8 +17,8 @@ This wrapper allows easy access to the deepseek API, [docs here](https://api-doc
 The API wrapper resolves around the Agent class. This class saves history, allows for tooling, different models, the whole API.
 To start, make an instance of the `Agent` class and fill in the following parameters.
 
-`system_prompt`: the system prompt for the AI. Use this for general purpose. *Note that when not including a 'speak english' section it tends to speak Chinese.*.
-`api_key`: your API key as a string. If left empty, the wrapper falls back to `api-key.txt`.
+- `system_prompt`: the system prompt for the AI. Use this for general purpose. *Note that when not including a 'speak english' section it tends to speak Chinese.*.
+- `api_key`: your API key as a string. If left empty, the wrapper falls back to `api-key.txt`.
 
 Example:
 ```python
