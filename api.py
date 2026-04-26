@@ -426,8 +426,8 @@ class Agent():
             elif isinstance(last_msg, dict) and last_msg.get('tool_calls'):
                 base_history = base_history[:-1]
 
-        def run(index, message):
-            local_agent = Agent("", api_key=self.api_key, model=self.model)
+        def run(self, index, message):
+            local_agent = Agent(self.sysprompt, api_key=self.api_key, model=self.model)
             local_agent.history = list(base_history)
             response = local_agent.prompt(message, **kwargs)
             return index, response
