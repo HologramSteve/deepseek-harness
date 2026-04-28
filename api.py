@@ -214,6 +214,8 @@ class Agent():
             messages.append(
                 {"role": "assistant", "content": "```" + codingLanguage.lower() + "\n", "prefix": True}
             )
+        else:
+            old_temp = self.temperature
 
         kwargs = {}
         if response_format is not None:
