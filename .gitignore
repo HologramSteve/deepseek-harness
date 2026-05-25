@@ -2,8 +2,4 @@ __pycache__/
 *.pyc
 ai_env/
 backups/
-api-key.txt
-package.zip
-test.py
-names.json
-package.py
+.env
