@@ -18,7 +18,12 @@ The API wrapper resolves around the Agent class. This class saves history, allow
 To start, make an instance of the `Agent` class and fill in the following parameters.
 
 - `system_prompt`: the system prompt for the AI. Use this for general purpose. *Note that when not including a 'speak english' section it tends to speak Chinese.*.
-- `api_key`: your API key as a string. If left empty, the wrapper falls back to `api-key.txt`.
+- `api_key`: your API key as a string. If left empty, the wrapper falls back to `DEEPSEEK_API_KEY` from your environment or `.env` file.
+
+Create a `.env` file in the project root with:
+```env
+DEEPSEEK_API_KEY=your-deepseek-api-key
+```
 
 Example:
 ```python

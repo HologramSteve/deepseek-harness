@@ -10,10 +10,13 @@ from enums import *
 from utils import getToolSet
 
 try:
-    with open("api-key.txt", "r", encoding="utf-8") as f:
-        DEFAULT_API_KEY = f.read().strip()
-except FileNotFoundError:
-    DEFAULT_API_KEY = None
+    from dotenv import load_dotenv
+
+    load_dotenv()
+except ImportError:
+    pass
+
+DEFAULT_API_KEY = os.getenv("DEEPSEEK_API_KEY")
 
 
 class Agent():
@@ -116,7 +119,7 @@ class Agent():
         self.api_key = api_key or DEFAULT_API_KEY
 
         if not self.api_key:
-            raise ValueError("Api key not found. Pass api_key to Agent or set api-key.txt.")
+            raise ValueError("Api key not found. Pass api_key to Agent or set DEEPSEEK_API_KEY in your environment or .env file.")
 
         self.client = OpenAI(
             api_key=self.api_key,
@@ -428,7 +431,7 @@ class Agent():
             elif isinstance(last_msg, dict) and last_msg.get('tool_calls'):
                 base_history = base_history[:-1]
 
-        def run(self, index, message):
+        def run(index, message):
             local_agent = Agent(self.sysprompt, api_key=self.api_key, model=self.model)
             local_agent.history = list(base_history)
             response = local_agent.prompt(message, **kwargs)
