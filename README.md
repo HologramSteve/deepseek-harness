@@ -1,7 +1,7 @@
 # Deepseek API Harness
-> Now with deepseek V4 support!
+> Now with DeepSeek V4 support!
 
-This wrapper allows easy access to the deepseek API, [docs here](https://api-docs.deepseek.com/).
+This wrapper allows easy access to the DeepSeek API, [docs here](https://api-docs.deepseek.com/).
 
 > Note this model is biased when it comes to Chinese politics, such as if Taiwan is a country.
 
@@ -14,7 +14,7 @@ This wrapper allows easy access to the deepseek API, [docs here](https://api-doc
 6. Parralel prompting
 
 ## 1. Getting started
-The API wrapper resolves around the Agent class. This class saves history, allows for tooling, different models, the whole API.
+The API wrapper resolves around the `Agent` class. This class saves history, allows for tooling, different models, the whole API.
 To start, make an instance of the `Agent` class and fill in the following parameters.
 
 - `system_prompt`: the system prompt for the AI. Use this for general purpose. *Note that when not including a 'speak english' section it tends to speak Chinese.*.
@@ -34,11 +34,11 @@ agent = Agent(
 ```
 
 Then also fill out the following non-required parameters for a better experience.
-- `tools`. Default: [], An array of functions that the AI can use. Learn more at the 'tools' chapter.
-- `model`. Default: Models.FLASH. Learn more at the 'models' chapter. 
-- `temperature`. Default: Temperature.CONVERSATION. Learn more at the 'temperature' chapter.
-- `thinking`. Default: `False`. This determines if the model should think. All models support the thinking mode. This will then return a response called 'reasoning_content' in the reply.
-- `expanded_output`. Default max output is `32000` tokens, with this that becomes `384.000` tokens (a lot). We normally prevent very long unnecessary long ouputs by capping it.
+- `tools`. Default: [], An array of functions that the AI can use. Learn more at the [tools chapter](#4-tools).
+- `model`. Default: Models.FLASH. Learn more at the ['models' chapter](2-models). 
+- `temperature`. Default: Temperature.CONVERSATION. Learn more at the ['temperature' chapter](#3-temperature).
+- `thinking`. Default: `False`. This determines whether the model should think. All models support the thinking mode. This will then return a response called 'reasoning_content' in the reply.
+- `expanded_output`. The default max output is `32000` tokens, with this that becomes `384.000` tokens (a lot). We normally prevent unnecessarily long outputs by capping it.
 - `on_event`, default = None, a function that will be called on events like tool calls and tool call completions
 - `log`: debug logging
 - `self_prompt`, default = `False`, allow the AI to spawn subagents to do tasks in parralel.
@@ -55,8 +55,8 @@ These are the values it holds:
 
 ## 2. Models
 There are 4 models active (24-4-2026, d-m-y) as of now.
-- `deepseek-chat` [Deepseek V3.2](https://api-docs.deepseek.com/news/news251201)
-- `deepseek-reasoner` [Deepseek V3.2](https://api-docs.deepseek.com/news/news251201)
+- `deepseek-chat` [Deepseek V4 Flash (non-thinking)](https://api-docs.deepseek.com/news/news260424)
+- `deepseek-reasoner` [Deepseek V4 Flash (thinking)](https://api-docs.deepseek.com/news/news260424)
 - `deepseek-v4-flash` [Deepseek V4 Flash](https://api-docs.deepseek.com/news/news260424)
 - `deepseek-v4-pro` [Deepseek V4 Pro](https://api-docs.deepseek.com/news/news260424)
 
