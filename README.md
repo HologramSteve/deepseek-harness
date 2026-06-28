@@ -35,7 +35,7 @@ agent = Agent(
 
 Then also fill out the following non-required parameters for a better experience.
 - `tools`. Default: [], An array of functions that the AI can use. Learn more at the [tools chapter](#4-tools).
-- `model`. Default: Models.FLASH. Learn more at the ['models' chapter](2-models). 
+- `model`. Default: Models.FLASH. Learn more at the ['models' chapter](#2-models). 
 - `temperature`. Default: Temperature.CONVERSATION. Learn more at the ['temperature' chapter](#3-temperature).
 - `thinking`. Default: `False`. This determines whether the model should think. All models support the thinking mode. This will then return a response called 'reasoning_content' in the reply.
 - `expanded_output`. The default max output is `32000` tokens, with this that becomes `384.000` tokens (a lot). We normally prevent unnecessarily long outputs by capping it.
